@@ -31,7 +31,7 @@ init()
 local function filter_position(x, y, camera_id)
 	-- maybe pass in actual vmath.vector3() here instead of raw x,y ?
 	-- camera_id must be set when drawing
-	if orthographic and false then -- force disable something is wrong?
+	if orthographic then -- force disable something is wrong?
 		assert(camera_id, "Poly: You must set Orthographic camera_id when rendering!")
 		-- if there are multiple cameras / split screen it will probably look weird
 		-- probably no easy way to fix this without checking the screen view bounds?

@@ -69,7 +69,9 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
-	m_x, m_y = action.x, action.y
+	local position = orthographic.screen_to_world(hash("/camera"), vmath.vector3(action.x, action.y, 0))
+	m_x = position.x + 960 / 2
+	m_y = position.y + 640 / 2
 end
 
 function on_reload(self)
